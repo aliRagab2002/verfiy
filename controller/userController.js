@@ -75,7 +75,7 @@ const signup = async (req, res) => {
 };
 
 const sendVerificationEmail = ({_id,email},res)=>{
-    const currendUri = "http://localhost:5000/";
+    const currendUri = "https://aliragab752002-32d59c101d22.herokuapp.com/";
     const uniqueString = uuidv4() + _id;
     
     const mailOptions = {
