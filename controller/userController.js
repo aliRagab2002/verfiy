@@ -75,16 +75,23 @@ const signup = async (req, res) => {
 };
 
 const sendVerificationEmail = ({_id,email},res)=>{
-    const currendUri = "https://aliragab2002-be78ad0a8c78.herokuapp.com/";
+    // const currendUri = "https://aliragab2002-be78ad0a8c78.herokuapp.com/";
+    const currendUri = "https://aliragab752002-32d59c101d22.herokuapp.com/";
+    // const currendUri = "http://localhost:5000/";
+
     const uniqueString = uuidv4() + _id;
     
     const mailOptions = {
         from: process.env.AUTH_EMAIL,
         to: email,
         subject: "Verify your email",
-        html: `<h1>Hello ${email}</h1>
-        <p>Please click on the link below to verify your email</p>
-        <a href="${currendUri+"api/verify/"+_id +"/" + uniqueString}>hero</a>`
+        // html: `<h1>Hello ${email}</h1>
+        // <p>Please click on the link below to verify your email</p>
+        // <a href="${currendUri+"api/verify/"+_id +"/" + uniqueString}>hero</a>`
+        html: `<h1>Hello ${name}</h1>
+        <p>Please click on the link below to verify your email:</p>
+        <pre>${currendUri}api/verify/${_id}/${uniqueString}</pre>`
+
     };
 
     const saltRounds = 10;
