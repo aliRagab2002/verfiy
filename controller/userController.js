@@ -85,12 +85,10 @@ const sendVerificationEmail = ({_id,email},res)=>{
         from: process.env.AUTH_EMAIL,
         to: email,
         subject: "Verify your email",
-        // html: `<h1>Hello ${email}</h1>
-        // <p>Please click on the link below to verify your email</p>
-        // <a href="${currendUri+"api/verify/"+_id +"/" + uniqueString}>hero</a>`
-        html: `<h1>Hello ${name}</h1>
-        <p>Please click on the link below to verify your email:</p>
-        <pre>${currendUri}api/verify/${_id}/${uniqueString}</pre>`
+        html: `<h1>Hello ${email}</h1>
+        <p>Please click on the link below to verify your email</p>
+        <a href="${currendUri+"api/verify/"+_id +"/" + uniqueString}>hero</a>`
+        
 
     };
 
